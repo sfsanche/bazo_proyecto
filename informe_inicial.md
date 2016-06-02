@@ -16,7 +16,7 @@ ROOT.
  
 * Nhell Cerna Velasco
 * Marvin Ascencio Sosa
-* Sebastián Sánchez Valero
+* Sebastián Sánchez
 * Javier Rengifo Gonzales
 
 ## Fechas límites aproximadas:
