@@ -5,8 +5,5 @@ La idea es utilizar TMVA para optimizar cortes experimentales para la selección
 
 ## Contenidos
 
-1) Informe Inicial:   
-  informe_inicial.md
-  Definición del tema y pregunta específica, planeamiento del proyecto y distribución de las tareas.
-  
-  
+1. [Informe Inicial] (./informe_inicial.md):
+  Definición del tema y pregunta específica, planeamiento del proyecto y distribución de las tareas
