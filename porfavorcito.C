@@ -77,6 +77,7 @@ Hist->Fill(El);
 //Wlep=    ;
 //Encontrando dimuones:
 //Preguntar si es corriente cargada
+for (int i=0; i<nf ;i++){
 if(cc==1){
 	cout<<"es corriente cargada: "<<cc<<endl;
 //Preguntar si es sabor muonico y el primer muón acompañará a este neutrino.
@@ -88,7 +89,9 @@ if(cc==1){
 //El primer muón acompaña a este neutrino
 		cout<<"es el segundo lepton: "<<pdgf<<endl;		
 	}
+	}
 }
+
 //else{
 //	cout<<"no es corriente cargada: "<<cc<<endl;
 //}
