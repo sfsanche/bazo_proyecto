@@ -1,6 +1,6 @@
-##SRC_Pre_Proceso
+                                  SRC_Pre_Proceso
 
-# Event generation And Data preprocessig scripts
+##Event generation And Data preprocessig scripts
 
 1. [Event Generator] (./gNuMIExptEvGen.cxx):
   Tweaked version of the NuMI customized event generatr routine of the GENIE MC. It generates an inclusive sample of events (with the interaction channels currently implemented in GENIE) and stores only the ones with two charged leptons (no matter the flavour/sign) within the final state particles.
