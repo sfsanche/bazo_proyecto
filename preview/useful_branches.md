@@ -1,7 +1,7 @@
 #List of potentially useful branches for MVA testing/training
 
 ## Regarding initial state
-- neu (int): Neutrino PDG code.
+- **neu (int): Neutrino PDG code.**
 Obs: Hit nucleus is always C12
 
 - hitnuc (int): Hit nucleon PDG code (not set for coherent, inverse muon decay and ve- elastic
@@ -11,33 +11,31 @@ events).
 
 
 
-## Regarding Interaction/Scattering channel
-- nc (bool ): Is it a NC event?
-- cc (bool ): Is it a CC event?
-- qel (bool ): Is it a quasi-elastic scattering event?
-- res (bool ): Is it a resonanec neutrino-production event?
-- dis (bool ): Is it a deep-inelastic scattering event?
-- coh (bool ): Is it a coherent meson production event?
-- dfr (bool ): Is it a diffractive meson production event?
-- imd (bool ): Is it an invese muon decay event?
- Obs: Neutrino - Electron elastic events are discarded, they cannot produce dileptons
+## Regarding Interaction/Scattering channel. Useful for testing and adressing the main source of dilepton/dimuon events
+- **nc (bool ): Is it a NC event?**
+- **cc (bool ): Is it a CC event?**
+- **qel (bool ): Is it a quasi-elastic scattering event?**
+- **res (bool ): Is it a resonanec neutrino-production event?**
+- **dis (bool ): Is it a deep-inelastic scattering event?**
+- **coh (bool ): Is it a coherent meson production event?**
+- **dfr (bool ): Is it a diffractive meson production event?**
+ Obs: Neutrino - Electron elastic and invese muon decay events are discarded as they cannot produce dileptons
 
 ## Regarding produced states
-- nmuons (int ): Number of muons in final state. This comes from MC truth and is our primary signal/background discriminant
-- charm (bool ): Produces charm?
-- resid (bool ): Produced baryon resonance id (set for resonance events only).
+- **nmuons (int ): Number of muons in final state. This comes from MC truth and is our primary signal/background discriminant**
+- **charm (bool ): Produces charm?**
+- **resid (bool ): Produced baryon resonance id (set for resonance events only).**
 
 
 ## Regarding Event kinematics (very useful, as they can generally be reconstructed from data)
-- Ev (double): Incoming neutrino energy (in GeV).
-- x (double): Bjorken x (as computed from the event record).
-- y (double): Inelasticity y (as computed from the event record).
-- t (double): Energy transfer to nucleus (nucleon) at coherent (diffractive) production events (as
-computed from the event record).
-- Q2 (double): Momentum transfer Q 2 (as computed from the event record) (in GeV 2 ).
-- W (double): Hadronic invariant mass W (as computed from the event record).
-- Wlep: reconstructed dilepton pair invariant mass
-- calresp0 (double): An approximate calorimetric response to the generated hadronic vertex actibity.
+- **Ev (double): Incoming neutrino energy (in GeV)**
+- **x (double): Bjorken x (as computed from the event record).**
+- **y (double): Inelasticity y (as computed from the event record).**
+- **t (double): Energy transfer to nucleus (nucleon) at coherent (diffractive) production events (as computed from the event record).**
+- **Q2 (double): Momentum transfer Q 2 (as computed from the event record) (in GeV 2 ).**
+- **W (double): Hadronic invariant mass W (as computed from the event record).**
+- **Wlep: reconstructed dilepton pair invariant mass**
+- **calresp0 (double): An approximate calorimetric response to the generated hadronic vertex actibity.**
 
 ## Others, only for testing purposes
 Obs: We have always two leptons, so thath we don't know which is the final state primary lepton
