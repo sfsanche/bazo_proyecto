@@ -14,3 +14,4 @@
   TSelector that scans the GENIE data TTree and:
     - Computes the lepton pair invariant mass
     - Marks events in whch the two leptons are both muons (disregarding the sign)
+  and saves both to new branches for the analysis.
