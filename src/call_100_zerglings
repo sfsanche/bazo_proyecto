@@ -1,0 +1,26 @@
+#!/bin/bash
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 11 -n 5 --seed 8897 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 12 -n 5 --seed 25755 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 21 -n 5 --seed 7018 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 22 -n 5 --seed 21534 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 31 -n 5 --seed 10523 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 32 -n 5 --seed 13968 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 41 -n 5 --seed 16713 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 42 -n 5 --seed 23995 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 51 -n 5 --seed 21982 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 52 -n 5 --seed 6523 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 61 -n 5 --seed 23751 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 62 -n 5 --seed 18953 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 71 -n 5 --seed 11643 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 72 -n 5 --seed 1224 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 81 -n 5 --seed 32750 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+gevgen_numi -f 'numiflux_net.root,-12[nue],-14[numu],12[nuebar],14[numubar]' -g 1000060120 -r 82 -n 5 --seed 1953 --cross-sections spline_nus_C12.xml --message-thresholds Messenger_laconic.xml >/dev/null 2>&1&
+wait
+echo All processes finished
