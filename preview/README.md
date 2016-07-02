@@ -8,5 +8,5 @@
 2. [Neutrino Energy] (./Histogram.png):
   Testing of Neutrino Energy spectrum for dilepton events.
 
-3. [Useful Branches] (./useful_branches.md): This are the relevant branches for analisys, because this the information for we can access from the real expreriment.
+3. [Useful Branches] (./useful_branches.md): This are the relevant branches for analisys, because this the information for we can access from the real expreriments such as MINERvA.
   
