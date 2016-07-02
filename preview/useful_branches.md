@@ -62,9 +62,9 @@ Obs: We have always two leptons, so thath we don't know which is the final state
 
 - nip (int): Number of ‘primary’ (‘primary’ : before intranuclear rescattering) p and p ̄ .
  nin (int): Number of ‘primary’ n and n- 
-- nipip (int): Number of ‘primary’ ⇡ + .
-- nipim (int): Number of ‘primary’ ⇡ .
-- nipi0 (int): Number of ‘primary’ ⇡ 0 .
+- nipip (int): Number of ‘primary’ \Pi + .
+- nipim (int): Number of ‘primary’ \Pi .
+- nipi0 (int): Number of ‘primary’ \Pi 0 .
 - nikp (int): Number of ‘primary’ K + .
 - nikm (int): Number of ‘primary’ K .
 - nik0 (int): Number of ‘primary’ K 0 and K  ̄ 0 .
