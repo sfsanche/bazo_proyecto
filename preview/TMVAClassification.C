@@ -1,4 +1,42 @@
 // @(#)root/tmva $Id$
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//
+//									BAZO FINAL PROJECT
+//
+//	This code is based on the TMVAClassification.C macro example that comes with 
+//	standard ROOT installation. We used it as a template to guide the making of 
+//	a multivariate analysis for the Advanced Computational Physics Course.
+//
+//	Authors:	Marvin Ascencio
+//				Nhell Cerna
+//				Javier Rengifo
+//				Sebastian Sanchez
+//
+//	Compiled and run with ROOT v5.34.36 (gcc v4.9.2, linuxx8664)
+//
+//	Objective: Train and test MVA methods for dimuon event discrimination in a custom
+//	generated dilepton event sample in an straightforward parameterization of the 
+//	MINERvA experiment.
+//
+//	MVA Methods trained and tested:
+//	- Linear Discriminator							(LD)
+//	- Boosted Decision Trees						(BDT)
+//	- MultiLayer Perceptrons						(MLPBNN)
+//	- k-Nearest Neighbors							(kNN)
+//	- Likelihood + Principal Components Analysis	(L+PCA)
+//
+//
+//
+//
+//
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+// Original header
 /**********************************************************************************
  * Project   : TMVA - a ROOT-integrated toolkit for multivariate data analysis    *
  * Package   : TMVA                                                               *
@@ -27,11 +65,14 @@
  *                                                                                *
  **********************************************************************************/
 
+
+//STD headers
 #include <cstdlib>
 #include <iostream>
 #include <map>
 #include <string>
 
+//ROOT headers
 #include "TChain.h"
 #include "TFile.h"
 #include "TTree.h"
@@ -41,12 +82,14 @@
 #include "TROOT.h"
 
 
+//TMVA headers
 #if not defined(__CINT__) || defined(__MAKECINT__)
 // needs to be included when makecint runs (ACLIC)
 #include "TMVA/Factory.h"
 #include "TMVA/Tools.h"
 #endif
 
+//Main TMVA function
 void TMVAClassification( TString myMethodList = "" )
 {
    // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
@@ -74,8 +117,10 @@ void TMVAClassification( TString myMethodList = "" )
    gROOT->ProcessLine(".L TMVAGui.C");
 
    // Default MVA methods to be trained + tested
+   // Define a parameter std::map for easier handling
    std::map<std::string,int> Use;
 
+//%%PENDING
    // --- Cut optimisation
    Use["Cuts"]            = 1;
    Use["CutsD"]           = 1;
@@ -134,10 +179,12 @@ void TMVAClassification( TString myMethodList = "" )
    Use["RuleFit"]         = 1;
    // ---------------------------------------------------------------
 
+
+   //Start nice output to show the user that the code is working...
    std::cout << std::endl;
    std::cout << "==> Start TMVAClassification" << std::endl;
 
-   // Select methods (don't look at this code - not of interest)
+   // Select methods if some were specified when calling the fucntion; else, just skip and use all methods
    if (myMethodList != "") {
       for (std::map<std::string,int>::iterator it = Use.begin(); it != Use.end(); it++) it->second = 0;
 
@@ -165,7 +212,7 @@ void TMVAClassification( TString myMethodList = "" )
 
    // Create the factory object. Later you can choose the methods
    // whose performance you'd like to investigate. The factory is 
-   // the only TMVA object you have to interact with
+   // the only TMVA object we have to interact with
    //
    // The first argument is the base of the name of all the
    // weightfiles in the directory weight/
@@ -176,22 +223,36 @@ void TMVAClassification( TString myMethodList = "" )
    TMVA::Factory *factory = new TMVA::Factory( "TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
 
-   // If you wish to modify default settings
+   // This is if we wished to modify default settings; but we DON'T.
    // (please check "src/Config.h" to see all available global options)
    //    (TMVA::gConfig().GetVariablePlotting()).fTimesRMS = 8.0;
    //    (TMVA::gConfig().GetIONames()).fWeightFileDir = "myWeightDirectory";
 
+   
    // Define the input variables that shall be used for the MVA training
    // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
    // [all types of expressions that can also be parsed by TTree::Draw( "expression" )]
-   factory->AddVariable( "myvar1 := var1+var2", 'F' );
-   factory->AddVariable( "myvar2 := var1-var2", "Expression 2", "", 'F' );
-   factory->AddVariable( "var3",                "Variable 3", "units", 'F' );
-   factory->AddVariable( "var4",                "Variable 4", "units", 'F' );
+   /* Examples:
+		
+	  factory->AddVariable( "myvar1 := var1+var2", 'F' );
+	  factory->AddVariable( "myvar2 := var1-var2", "Expression 2", "", 'F' );
+	  factory->AddVariable( "var3",                "Variable 3", "units", 'F' );
+	  factory->AddVariable( "var4",                "Variable 4", "units", 'F' );
+	*/
+	factory->AddVariable("Wlep",		"Lepton pair Invariant Mass",		"GeV",	'F');
+	factory->AddVariable("calresp0",	"Simulated calorimeter response",	"a.u.", 'F');
+	factory->AddVariable("Ev",			"Incoming Neutrino energy",			"GeV",	'F');
+	factory->AddVariable("Q2",			"Momentum transfer",				"GeV2",	'F');
+	factory->AddVariable("x",			"Bjorken x-variable",				"",		'F');
+	factory->AddVariable("y",			"Inelasticity",						"",		'F');
+	factory->AddVariable("t",			"Energy transfer to nucleus for Coherent events",	"GeV",	'F');
+
+
 
    // You can add so-called "Spectator variables", which are not used in the MVA training,
    // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
    // input variables, the response values of all trained MVAs, and the spectator variables
+   // PENDING FROM HERE
    factory->AddSpectator( "spec1 := var1*2",  "Spectator 1", "units", 'F' );
    factory->AddSpectator( "spec2 := var1*3",  "Spectator 2", "units", 'F' );
 
@@ -491,3 +552,4 @@ void TMVAClassification( TString myMethodList = "" )
    // Launch the GUI for the root macros
    if (!gROOT->IsBatch()) TMVAGui( outfileName );
 }
+
