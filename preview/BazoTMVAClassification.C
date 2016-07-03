@@ -2,7 +2,7 @@
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //
-//									BAZO FINAL PROJECT
+//				BAZO FINAL PROJECT
 //
 //	This code is based on the TMVAClassification.C macro example that comes with 
 //	standard ROOT installation. We used it as a template to guide the making of 
@@ -114,7 +114,7 @@ void BazoTMVAClassification( TString myMethodList = "" )
    // to get access to the GUI and all tmva macros
    TString thisdir = gSystem->DirName(gInterpreter->GetCurrentMacroName());
    gROOT->SetMacroPath(thisdir + ":" + gROOT->GetMacroPath());
-   gROOT->ProcessLine(".L TMVAGui.C");
+   gROOT->ProcessLine(".L $ROOTSYS/tmva/test/TMVAGui.C");
 
    // Default MVA methods to be trained + tested
    // Define a parameter std::map for easier handling
@@ -263,7 +263,7 @@ void BazoTMVAClassification( TString myMethodList = "" )
 
    // Read training and test data
    // (it is also possible to use ASCII format as input -> for instance, see TMVA Users Guide)
-   TString fname = "../lair/ultralisk_until7.gst.root";
+   TString fname = "./ultralisk_until7.gst.root";
    
    // Automatically download the data file from the server, if it's not already downloaded
 	 if (gSystem->AccessPathName( fname ))  // file does not exist in local directory
