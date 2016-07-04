@@ -17,4 +17,4 @@ La idea es utilizar TMVA para optimizar cortes experimentales para la selección
 
 4. [Resultados] (./results)
   1. Informe (./Presentacion/BazoProyecto.pdf)
-  2. Presentación(./Presentacion/Presentation.pdf)
+  2. Presentación (./Presentacion/Presentation.pdf)
